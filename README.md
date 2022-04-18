@@ -1,24 +1,60 @@
-# README
+# Recipe App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+>  Recipe App
 
-Things you may want to cover:
+The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
-* Ruby version
+## Project requirements
 
-* System dependencies
+The project requirements can be viewed [here](https://github.com/microverseinc/curriculum-rails/blob/main/recipe-app/buisness_requirements.md)
 
-* Configuration
+## Built With
 
-* Database creation
+- Languages: Ruby
+- Framework: Ruby on Rails
+- Database: PostgreSQL
 
-* Database initialization
+## Usage
 
-* How to run the test suite
+Run the following commands:</br>
+`git clone https://github.com/Hombre2014/Recipe-App.git`</br>
+`cd Recipe-App`</br>
+`bundle install`</br>
+`rails s`</br>
+Open a browser and go to: `https://localhost:3000` to view the app.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Authors
 
-* Deployment instructions
+👤 **Yuriy Chamkoriyski**
 
-* ...
+- GitHub: [@Hombre2014](https://github.com/Hombre2014)
+- Twitter: [@Chamkoriyski](https://twitter.com/Chamkoriyski)
+- LinkedIn: [axebit](https://linkedin.com/in/axebit)
+
+### From phase 8 onwards
+
+👤 **Evren Ersoy**
+
+- GitHub: [@Ewoskyx](https://github.com/Ewoskyx)
+- Twitter: [@Ewoskyx](https://twitter.com/Ewoskyx)
+- LinkedIn: [Evren Ersoy](https://www.linkedin.com/in/ewoskyx)
+
+👤 **Mahbub Alam**
+
+- GitHub: [@mahbubul14](https://github.com/mahbubul14)
+- Twitter: [@mahbubul_14](https://twitter.com/mahbubul_14)
+- LinkedIn: [Mahbubul Alam](https://www.linkedin.com/in/mahbubul14/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Hombre2014/hellorails/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./license.md) licensed.
