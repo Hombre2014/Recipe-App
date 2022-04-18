@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Microverse-blueviolet
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Recipe App
 
@@ -38,12 +38,6 @@ Open a browser and go to: `https://localhost:3000` to view the app.
 - GitHub: [@Ewoskyx](https://github.com/Ewoskyx)
 - Twitter: [@Ewoskyx](https://twitter.com/Ewoskyx)
 - LinkedIn: [Evren Ersoy](https://www.linkedin.com/in/ewoskyx)
-
-👤 **Mahbub Alam**
-
-- GitHub: [@mahbubul14](https://github.com/mahbubul14)
-- Twitter: [@mahbubul_14](https://twitter.com/mahbubul_14)
-- LinkedIn: [Mahbubul Alam](https://www.linkedin.com/in/mahbubul14/)
 
 ## 🤝 Contributing
 
