@@ -49,7 +49,7 @@ Open a browser and go to: `https://localhost:3000` to view the app.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Hombre2014/hellorails/issues).
+Feel free to check the [issues page](https://github.com/Hombre2014/Recipe-App/issues).
 
 ## Show your support
 
