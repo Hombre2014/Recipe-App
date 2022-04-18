@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore .env file
+.env
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -32,4 +35,3 @@
 
 # Ignore the node modules files
 node_modules/
-

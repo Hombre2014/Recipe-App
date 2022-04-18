@@ -1,3 +1,5 @@
+![](https://img.shields.io/badge/Microverse-blueviolet
+
 # Recipe App
 
 >  Recipe App
@@ -30,8 +32,6 @@ Open a browser and go to: `https://localhost:3000` to view the app.
 - GitHub: [@Hombre2014](https://github.com/Hombre2014)
 - Twitter: [@Chamkoriyski](https://twitter.com/Chamkoriyski)
 - LinkedIn: [axebit](https://linkedin.com/in/axebit)
-
-### From phase 8 onwards
 
 👤 **Evren Ersoy**
 
