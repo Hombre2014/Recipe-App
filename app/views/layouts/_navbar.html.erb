@@ -1,0 +1,30 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <% if current_user %>
+        <div>
+          <span>Hello, <%= link_to current_user.name %></span>
+        </div>
+        <li class="nav-item">
+            <%= link_to 'Home', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Foods', foods_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+            <%= link_to 'Home', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log in', new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
