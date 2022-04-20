@@ -6,7 +6,16 @@ class User < ApplicationRecord
   has_many :foods, dependent: :destroy
   has_many :recipes, dependent: :destroy
 
+
   validates :name, presence: true, length: { minimum: 1, maximum: 50 }
+
+  def sum(array)
+    sum = 0
+    array.each do |number|
+      sum += number.quantity * number.food.Price
+    end
+    sum
+  end
 
   ROLES = %i[admin default].freeze
 

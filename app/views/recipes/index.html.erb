@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <%= link_to "Create a Recipe", new_recipe_path, class: "btn btn-success create" %>
+  <ul class="list-group list-unstyled">
+    <% @recipes.each do |r| %>
+    <li class="border border-1 border-secondary container mt-5 rounded bio">
+      <div class="d-flex p-3">
+        <div>
+          <%= link_to recipe_path(r.id), id: "recipe_path#{r.id}" do %>
+          <h5 class="me-5"><%= r.name%></h5>
+          <% end %>
+          <div>
+            <%if can? :destroy, r %> <%= button_to "Delete", recipe_path(r.id),
+            method: :delete, class: "btn btn-dark"%> <% end %>
+          </div>
+        </div>
+        <div>
+          <p class="ml-5"><%= r.description%></p>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
