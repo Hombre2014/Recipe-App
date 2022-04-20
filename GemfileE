@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.1.1'
 gem 'ffi', '~> 1.15', '>= 1.15.5'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -28,9 +28,6 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
-# Add rubocop
-gem 'rubocop', '>= 1.0', '< 2.0'
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -41,10 +38,13 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo'
+gem 'tzinfo-data'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
+
+gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
