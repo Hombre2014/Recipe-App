@@ -11,7 +11,7 @@ class User < ApplicationRecord
   def sum(array)
     sum = 0
     array.each do |number|
-      sum += number.quantity * number.food.Price
+      sum += number.quantity * number.food.price
     end
     sum
   end

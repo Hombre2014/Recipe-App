@@ -4,10 +4,10 @@
       <%= f.text_field :name, required: true, class: " recipe-form form-control mb-4" %>
       <%= f.label :description, "Write description", class: " recipe-form form-label fs-5" %>
       <%= f.text_area :description, required: true, class: " recipe-form form-control" %>
-      <%= f.label :cookingTime, "Cooking Time", class: " recipe-form form-label fs-5" %>
-      <%= f.text_field :cookingTime, class: " recipe-form form-control mb-2" %>
-      <%= f.label :preparationTime, "Preparation Time", class: " recipe-form form-label fs-5" %>
-      <%= f.text_field :preparationTime, class: " recipe-form form-control mb-2" %>
+      <%= f.label :cooking_time, "Cooking Time", class: " recipe-form form-label fs-5" %>
+      <%= f.text_field :cooking_time, class: " recipe-form form-control mb-2" %>
+      <%= f.label :preparation_time, "Preparation Time", class: " recipe-form form-label fs-5" %>
+      <%= f.text_field :preparation_time, class: " recipe-form form-control mb-2" %>
       <div class="form-check form-switch public">
       <%= f.check_box :public, class:"form-check-input" %>
       <%= f.label :public, "Public", class: " recipe-form form-check-label" %>    
