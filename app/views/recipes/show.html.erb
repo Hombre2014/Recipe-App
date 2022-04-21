@@ -1,52 +1,51 @@
-
 <div class="border border-3 border-primary container rounded recipe-c">
-    <div class="my-3">
-      <h2><%= @recipe.name%></h2>
+  <div class="my-3">
+    <h2><%= @recipe.name%></h2>
+  </div>
+  <div>
+    <div class="split">
+      <div class="d-flex justify-content-between p-2">
+        <h5> Preparation time: <%= @recipe.preparation_time %> min </h5>
+        <div class="public-btn">
+        <% if @recipe.public %>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+            <label class="form-check-label" for="flexSwitchCheckChecked">Public</label>
+          </div>
+        <% end %>
+        <% if !@recipe.public %>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+          </div>
+        <% end %>
+      </div>
+      </div>
     </div>
     <div>
-      <div class="split">
-        <div class="d-flex justify-content-between p-2">
-          <h5> Preparation time: <%= @recipe.preparation_time %> min </h5>
-          <div class="public-btn">
-          <% if @recipe.public %>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-              <label class="form-check-label" for="flexSwitchCheckChecked">Public</label>
-            </div>
-          <% end %>
-          <% if !@recipe.public %>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-              <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-            </div>
-          <% end %>
+      <h5 class="p-2"> Cooking time: <%= @recipe.cooking_time %> min </h5>
+      <h5 class="p-2"> Steps go here...</h5>
+    </div>
+    <div class="d-flex justify-content-around">
+      <% if user_signed_in? %>
+        <div class="recipe-btn">
+          <%= link_to "Generate Shopping list",  recipe_shopping_lists_path(@recipe.id), :class => "btn btn-dark btn-gen" %>
+          <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe) , class: "btn btn-dark btn-gen "%>
         </div>
-        </div>
-      </div>
-      <div>
-        <h5 class="p-2"> Cooking time: <%= @recipe.cooking_time %> min </h5>
-        <h5 class="p-2"> Steps go here...</h5>
-      </div>
-      <div class="d-flex justify-content-around">
-       <% if user_signed_in? %>
-      <div class="recipe-btn">
-        <%= link_to "Generate Shopping list",  recipe_shopping_lists_path(@recipe.id), :class => "btn btn-dark btn-gen" %>
-        <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe) , class: "btn btn-dark btn-gen "%>
-      </div>
-      <% end %>
-      </div>
+    <% end %>
     </div>
   </div>
-  <table class="table table-bordered table-striped recipe-table ">
-    <thead>
-      <tr>
-        <th scope="col">Food</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Value</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
+</div>
+<table class="table table-bordered table-striped recipe-table ">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Value</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @recipe.recipe_foods.each do |food| %>
       <tr>
         <th scope="row"><%= food.food.name %></th>
@@ -54,12 +53,11 @@
         <td>$<%= food.food.price * food.quantity %></td>
         <td class="table-btn">
           <% if can? :destroy, @recipe %>
-    
-          <%=button_to "Delete", recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id), method: :delete, class:"btn btn-outline-danger btn-sm"%>
-          <%=link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id), class:"btn btn-outline-primary btn-sm"%>
-        <%end%>
+            <%=button_to "Delete", recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id), method: :delete, class:"btn btn-outline-danger btn-sm"%>
+            <%=link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id), class:"btn btn-outline-primary btn-sm"%>
+          <%end%>
         </td>
       </tr>
     <% end %>
-    </tbody>
-  </table>
+  </tbody>
+</table>
