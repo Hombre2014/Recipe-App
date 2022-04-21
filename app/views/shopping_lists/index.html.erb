@@ -2,14 +2,14 @@
   <h1 class="text-center mb-5">Shopping List</h1>
 
   <div class="d-flex flex-row justify-content-evenly mb-5">
-    <h3>Amount of food items to buy: <%= @recipe_foods.length %> </h3>
+    <h3>Amount of ingredients to buy: <%= @recipe_foods.length %> </h3>
     <h3>Total price: <%= @total_price %> </h3>
   </div>
 
   <table class="table table-bordered table-striped recipe-table">
     <thead>
         <tr>
-        <th scope="col">Food</th>
+        <th scope="col">Ingredient</th>
         <th scope="col">Quantity</th>
         <th scope="col">Price</th>
         </tr>
@@ -19,7 +19,7 @@
         <% if @food.include?(r.food) %>
           <tr>
             <th scope="row"><%= r.food.name %></th>
-            <td><%= r.quantity %><%= r.food.measurementUnit %></td>
+            <td><%= r.quantity %> x <%= r.food.measurement_unit %></td>
             <td>$<%= r.food.price * r.quantity %></td>
           </tr>
         <% end %>
