@@ -1,21 +1,30 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource
+
   def index
-    @foods = Food.all
+    @foods = current_user.foods
+    @food = Food.find_by(id: params[:id])
+    # @foods = Food.all
   end
 
+  def show; end
+
   def new
-    @food = Food.new
+    @foods = current_user.foods.includes(:recipes)
+    # @food = Food.new
   end
 
   def create
-    @food = foods.new(food_params)
+    @food = current_user.foods.new(food_params)
 
-    if @food.save
-      flash[:notice] = 'The ingredients have been added successfully'
-      redirect_to foods_path
-    else
-      flash[:alert] = 'Adding a new ingredient failed'
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @food.save
+        format.html { redirect_to food_url(@food), notice: 'The ingredients have been added successfully.' }
+        format.json { render :show, status: :created, location: @food }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @food.errors, status: :unprocessable_entity }
+      end
     end
   end
 
