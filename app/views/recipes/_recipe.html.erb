@@ -1,0 +1,18 @@
+<div class="fs-4 p-3 border border-1 container mt-5 p-2">
+    <%= form_with model: @recipe, method: :post, local: true do |f| %>
+      <%= f.label :name, "Name", class: " recipe-form form-label fs-6" %>
+      <%= f.text_field :name, required: true, class: " recipe-form form-control mb-4" %>
+      <%= f.label :description, "Write description", class: " recipe-form form-label fs-5" %>
+      <%= f.text_area :description, required: true, class: " recipe-form form-control" %>
+      <%= f.label :cookingTime, "Cooking Time", class: " recipe-form form-label fs-5" %>
+      <%= f.text_field :cookingTime, class: " recipe-form form-control mb-2" %>
+      <%= f.label :preparationTime, "Preparation Time", class: " recipe-form form-label fs-5" %>
+      <%= f.text_field :preparationTime, class: " recipe-form form-control mb-2" %>
+      <div class="form-check form-switch public">
+      <%= f.check_box :public, class:"form-check-input" %>
+      <%= f.label :public, "Public", class: " recipe-form form-check-label" %>    
+      </div>
+      <br>
+      <%= f.submit "Add Recipe", class: "btn btn-primary my-5" %>
+    <% end %>
+  </div> 
