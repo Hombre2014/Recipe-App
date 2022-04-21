@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="container">
     <% if current_user %>
-      <ul class="navbar-nav w-100">
+      <ul class="navbar-nav w-100 d-flex flex-row justify-content-between bg-light">
         <div class="container-fluid row">
           <li class="nav-item col">
               <%= link_to 'Home', root_path, class: "nav-link" %>
@@ -17,11 +17,11 @@
           </li>
         </div>
       </ul>
-      <div>
-        <span>Welcome, <%= current_user.name %></span>
+      <div class="mx-auto">
+        <h2 class="fw-bold">Welcome, <%= current_user.name %></h2>
       </div>
     <% else %>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav w-100 d-flex flex-row justify-content-between">
         <li class="nav-item">
             <%= link_to 'Home', root_path, class: "nav-link" %>
         </li>
