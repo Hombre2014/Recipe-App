@@ -1,6 +1,6 @@
 <h2>Add new ingredient</h2>
 <div>
-  <%= form_with model: @food, url: "/foods/new" do |form| %>
+  <%= form_with model: @food, method: :post, local: true do |form| %>
     <%= form.hidden_field :user_id, value: current_user.id %>
 
     <div>

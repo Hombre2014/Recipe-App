@@ -49,7 +49,7 @@
     <% @recipe.recipe_foods.each do |food| %>
       <tr>
         <th scope="row"><%= food.food.name %></th>
-        <td><%= food.quantity  %> <%= food.food.measurementUnit  %></td>
+        <td><%= food.quantity  %> <%= food.food.measurement_unit  %></td>
         <td>$<%= food.food.price * food.quantity %></td>
         <td class="table-btn">
           <% if can? :destroy, @recipe %>

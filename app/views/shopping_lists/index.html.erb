@@ -19,7 +19,7 @@
         <% if @food.include?(r.food) %>
           <tr>
             <th scope="row"><%= r.food.name %></th>
-            <td><%= r.quantity %><%= r.food.measurementUnit %></td>
+            <td><%= r.quantity %><%= r.food.measurement_unit %></td>
             <td>$<%= r.food.price * r.quantity %></td>
           </tr>
         <% end %>
