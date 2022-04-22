@@ -5,14 +5,12 @@ class FoodsController < ApplicationController
   def index
     @foods = current_user.foods
     @food = Food.find_by(id: params[:id])
-    # @foods = Food.all
   end
 
   def show; end
 
   def new
     @foods = current_user.foods.includes(:recipes)
-    # @food = Food.new
   end
 
   # GET /foods/1/edit
@@ -32,24 +30,7 @@ class FoodsController < ApplicationController
     end
   end
 
-  # def create
-  #   @food = @foods.new(food_params)
-
-  #   if @food.save
-  #     flash[:notice] = 'The ingredients have been added successfully'
-  #     redirect_to foods_path
-  #   else
-  #     flash[:alert] = 'Adding a new ingredient failed'
-  #     render :new, status: :unprocessable_entity
-  #   end
-  # end
-
   def destroy
-    # @food = Food.find_by(id: params[:id])
-    # @food.destroy!
-
-    # redirect_to foods_path, notice: 'The ingredient have been deleted successfully'
-
     @food = Food.find_by(id: params[:id])
     @food.destroy
 

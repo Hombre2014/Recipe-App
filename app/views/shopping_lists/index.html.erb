@@ -1,29 +1,31 @@
 <% if user_signed_in? %>
-  <h1 class="text-center mb-5">Shopping List</h1>
+  <h1 class="text-center mb-5">Shopping List for recipe <%= @recipe.name %></h1>
 
   <div class="d-flex flex-row justify-content-evenly mb-5">
-    <h3>Amount of ingredients to buy: <%= @recipe_foods.length %> </h3>
-    <h3>Total price: <%= @total_price %> </h3>
+    <h3>Amount of ingredients to buy: <%= @recipe.recipe_foods.length %> </h3>
+    <h3>Total price: $<%= @total_price %> </h3>
   </div>
 
-  <table class="table table-bordered table-striped recipe-table">
-    <thead>
-        <tr>
-        <th scope="col">Ingredient</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Price</th>
-        </tr>
-    </thead>
-    <tbody>
-      <% @recipe_foods.each do |r| %>
-        <% if @food.include?(r.food) %>
+  <div class="container w-90">
+    <table class="table table-bordered table-striped recipe-table">
+      <thead>
           <tr>
-            <th scope="row"><%= r.food.name %></th>
-            <td><%= r.quantity %> x <%= r.food.measurement_unit %></td>
-            <td>$<%= r.food.price * r.quantity %></td>
+          <th scope="col">Ingredient</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
           </tr>
+      </thead>
+      <tbody>
+        <% @recipe.recipe_foods.each do |r| %>
+          <% if @food.include?(r.food) %>
+            <tr>
+              <th scope="row"><%= r.food.name %></th>
+              <td><%= r.quantity %> x <%= r.food.measurement_unit %></td>
+              <td>$<%= r.food.price * r.quantity %></td>
+            </tr>
+          <% end %>
         <% end %>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 <% end %>

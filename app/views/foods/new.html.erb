@@ -1,25 +1,27 @@
-<h2>Add new ingredient</h2>
-<div>
-  <%= form_with model: @food, method: :post, local: true do |form| %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-
-    <div>
-      <%= form.label :name %><br>
-      <%= form.text_field :name, placeholder: 'Name' %>
+<div class="container-fluid d-flex flex-column align-items-center">
+  <h2>Add new ingredient</h2>
+  <div class="mx-auto">
+    <%= form_with model: @food, method: :post, local: true do |form| %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <%= form.hidden_field :user_id, value: current_user.id %>
+          <div class="mb-3">
+            <%= form.label :name, { class: "form-label" } %><br>
+            <%= form.text_field :name, placeholder: 'Name' %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :measurement_unit, { class: "form-label" } %><br>
+            <%= form.text_field :measurement_unit, placeholder: 'Measurement unit' %>
+          </div>
+          <div class="text-field mb-3">
+            <%= form.label :price, { class: "form-label" } %><br>
+            <%= form.number_field :price, placeholder: 'Price' %>
+          </div>
+          <div class="text-center mb-2 mt-5">
+            <%= form.submit class:"btn btn-success create" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-
-    <div>
-      <%= form.label :measurement_unit %><br>
-      <%= form.text_field :measurement_unit, placeholder: 'Measurement unit' %>
-    </div>
-
-    <div class="text-field">
-      <%= form.label :price %><br>
-      <%= form.number_field :price, placeholder: 'Price' %>
-    </div>
-
-    <div>
-      <%= form.submit class:"btn btn-success create" %>
-    </div>
-  <% end %>
+  </div>
 </div>
