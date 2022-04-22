@@ -4,13 +4,13 @@ class PublicRecipesController < ApplicationController
       {
         id: recipe.id,
         recipe_foods: recipe.recipe_foods.map(&:id),
-        foods: recipe.foods, 
+        foods: recipe.foods,
         name: recipe.name,
         user: recipe.user.name,
         description: recipe.description,
         ingredients_amount: recipe.recipe_foods.count,
         ingredients_price: recipe.foods.map(&:price),
-        allQuantities: recipe.recipe_foods.map(&:quantity),
+        allQuantities: recipe.recipe_foods.map(&:quantity)
       }
     end
   end
