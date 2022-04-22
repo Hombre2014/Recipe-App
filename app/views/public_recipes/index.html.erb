@@ -5,13 +5,25 @@
       <% @recipes.each do |recipe| %>
       <li class="card list-style-none mb-3">
         <div class="card-header fs-4">
-          <%= link_to recipe[:name], recipe_path(id: recipe[:id]) %>
+          <%= link_to recipe[:name], recipe_path(id: recipe[:id]), { class: 'text-decoration-none' } %>
         </div>
         <div class="card-body">
           <h5 class="card-title">By: <%= recipe[:user] %></h5>
             <div class="d-flex flex-column float-end ">
             <p>Total food items: <%= recipe[:ingredients_amount] %></p>
             <p>Total price: $<%= recipe[:ingredients_price] %></p>
+            
+            <%
+=begin%>
+ <p> Total: 
+              <% @recipe.recipe_foods.each do |r| %>
+                <% if @food.include?(r.food) %>
+                  $<%= r.food.price * r.quantity %>
+                <% end %>
+              <% end %>
+            </p> 
+<%
+=end%>
           </div>
         </div>
       </li>
