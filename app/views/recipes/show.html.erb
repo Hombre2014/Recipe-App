@@ -55,9 +55,11 @@
             <td><%= food.quantity  %> x <%= food.food.measurement_unit %></td>
             <td>$<%= food.food.price * food.quantity %></td>
             <td class="table-btn d-flex flex-row justify-content-between">
+              <% if user_signed_in? %>
               <% if can? :destroy, @recipe %>
                 <%=button_to "Delete", recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id), method: :delete, class:"btn btn-outline-danger btn-sm"%>
                 <%=link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: food.id), class:"btn btn-outline-primary btn-sm"%>
+              <%end%>
               <%end%>
             </td>
           </tr>
