@@ -30,6 +30,10 @@ Open a browser and go to: `https://localhost:3000` to view the app.
 `cd Recipe-App`</br>
 run `rspec`
 
+## Live demo
+
+Visti World best recipes [here](https://world-best-recipes.herokuapp.com/)
+
 ## Authors
 
 👤 **Yuriy Chamkoriyski**
