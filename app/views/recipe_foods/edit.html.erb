@@ -1,0 +1,27 @@
+<div class="container-fluid d-flex flex-column align-items-center">
+  <h2 class="heading mt-3 mb-4 ">Edit recipe's ingredients</h2>
+  <div class="mx-auto">
+    <%= form_with  model: @recipe_food, url: { action: "update"}, local: true, class:"input-form"  do |f|%>
+      <div class="card">
+        <div class="card-body">
+          <div class="mb-3">
+            <%= f.label :Ingredient, class:"form-label" %><br>
+            <%= f.select :food_id, current_user.foods.collect {|food| [food.name, food.id]},{ include_blank: true} , class:"form-select" %><br>
+          </div>
+          <div class="mb-3">
+            <%= f.label :quantity, class:"form-label" %><br>
+            <%= f.number_field :quantity ,  class:"form-control" , required: true, min:1%><br>
+          </div>
+          <div class="mb-3 col-sm-8 mx-auto">
+            <%= f.submit "Update Recipe", class:"btn btn-primary form-control" %>
+          </div>
+        </div>
+      </div>
+    <%end%>
+    <div class="form-div mt-5">
+      <div class="mb-3 col-sm-4 mx-auto">
+        <%=link_to 'Back', foods_path, class:"btn btn-warning form-control" %>
+      </div>
+    </div>
+  </div>
+</div>

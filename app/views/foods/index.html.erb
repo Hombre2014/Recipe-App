@@ -1,0 +1,28 @@
+<div class="container-fluid d-flex flex-column align-items-center">
+  <h1 class="font-bold text-center mb-4">Ingredients</h1>
+  <div>
+    <%= link_to "Add ingredient", new_food_path, class:"btn btn-success create" %>
+  </div>
+  <div class="container-fluid d-flex flex-column align-items">
+    <table class="table table-bordered table-striped recipe-table mt-4">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">Ingredient</th>
+          <th scope="col">Measurement unit</th>
+          <th scope="col">Unit price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <% @foods.each do |food| %>
+        <tbody>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td class="text-center"><%= button_to "Delete", food_path(id: food.id), method: :delete, class:"btn btn-outline-danger btn-sm" %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>

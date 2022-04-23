@@ -1,0 +1,37 @@
+<nav class="navbar">
+  <div class="container">
+    <% if current_user %>
+      <ul class="navbar-nav w-100 d-flex flex-row justify-content-between bg-light">
+        <div class="container-fluid row">
+          <li class="nav-item col">
+              <%= link_to 'Home', root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item col">
+              <%= link_to 'Recipes', recipes_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item col">
+            <%= link_to 'Ingredients', foods_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item col">
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        </div>
+      </ul>
+      <div class="mx-auto">
+        <h2 class="fw-bold">Welcome, <%= current_user.name %></h2>
+      </div>
+    <% else %>
+      <ul class="navbar-nav w-100 d-flex flex-row justify-content-between">
+        <li class="nav-item">
+            <%= link_to 'Home', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Log in', new_user_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link" %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</nav>

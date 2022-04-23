@@ -1,0 +1,27 @@
+<section class="container mx-auto mt-2">
+  <h3 class="fs-1 lh-lg fw-semibold mt-2 text-center">Public Recipes</h3>
+  <div class="public-c">
+    <ul class="m-0 p-0">
+      <% @recipes.each do |recipe| %>
+      <li class="card list-style-none mb-3">
+        <div class="card-header fs-4">
+          <%= link_to recipe[:name], recipe_path(id: recipe[:id]), { class:
+          'text-decoration-none' } %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">By: <%= recipe[:user] %></h5>
+          <div class="d-flex flex-column float-end">
+            <p>Total food items: <%= recipe[:ingredients_amount] %></p>
+              <% total_price = 0 %>
+            <p>Total price: <% recipe[:allQuantities].each_with_index do |quantity, index| %>
+              <% total_price += quantity*recipe[:ingredients_price][index] %>
+            <%end%>
+            $<%= total_price %>
+            </p>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</section>

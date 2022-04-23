@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Microverse-blueviolet
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Recipe App
 
@@ -25,6 +25,11 @@ Run the following commands:</br>
 `rails s`</br>
 Open a browser and go to: `https://localhost:3000` to view the app.
 
+## Testing
+
+`cd Recipe-App`</br>
+run `rspec`
+
 ## Authors
 
 👤 **Yuriy Chamkoriyski**
@@ -39,17 +44,11 @@ Open a browser and go to: `https://localhost:3000` to view the app.
 - Twitter: [@Ewoskyx](https://twitter.com/Ewoskyx)
 - LinkedIn: [Evren Ersoy](https://www.linkedin.com/in/ewoskyx)
 
-👤 **Mahbub Alam**
-
-- GitHub: [@mahbubul14](https://github.com/mahbubul14)
-- Twitter: [@mahbubul_14](https://twitter.com/mahbubul_14)
-- LinkedIn: [Mahbubul Alam](https://www.linkedin.com/in/mahbubul14/)
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Hombre2014/hellorails/issues).
+Feel free to check the [issues page](https://github.com/Hombre2014/Recipe-App/issues).
 
 ## Show your support
 
