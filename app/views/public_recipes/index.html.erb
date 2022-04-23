@@ -12,14 +12,12 @@
           <h5 class="card-title">By: <%= recipe[:user] %></h5>
           <div class="d-flex flex-column float-end">
             <p>Total food items: <%= recipe[:ingredients_amount] %></p>
-            <p>Total food items: <% recipe[:allQuantities].each do |quantity|%>
-              <% recipe[:ingredients_price].each do |price| %>
-              <%=  recipe[:recipe_foods] %>
-              <%end%>
-            </p>
+              <% total_price = 0 %>
+            <p>Total price: <% recipe[:allQuantities].each_with_index do |quantity, index| %>
+              <% total_price += quantity*recipe[:ingredients_price][index] %>
             <%end%>
-          
-       
+            $<%= total_price %>
+            </p>
           </div>
         </div>
       </li>
