@@ -32,7 +32,7 @@ run `rspec`
 
 ## Live demo
 
-Visti World best recipes [here](https://world-best-recipes.herokuapp.com/)
+Visit World best recipes app [here](https://world-best-recipes.herokuapp.com/)
 
 ## Authors
 
