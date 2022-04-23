@@ -25,6 +25,11 @@ Run the following commands:</br>
 `rails s`</br>
 Open a browser and go to: `https://localhost:3000` to view the app.
 
+## Testing
+
+`cd Recipe-App`</br>
+run `rspec`
+
 ## Authors
 
 👤 **Yuriy Chamkoriyski**
